@@ -19,7 +19,9 @@ app.use(helmet());
 // CORS - allow the deployed frontend (and localhost during development).
 // Set FRONTEND_URL in the environment to a comma-separated list of allowed origins,
 // e.g. "https://your-app.vercel.app,http://localhost:3000"
-const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:3000')
+const allowedOrigins = (
+  process.env.CLIENT_URL || 'http://localhost:3000'
+  )
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
